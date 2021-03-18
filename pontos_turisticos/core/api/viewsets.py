@@ -2,6 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 from core.models import PontoTuristico
 from .serializers import PontoTuristicoSerializer
 from rest_framework.response import Response
+from rest_framework.decorators import action
 
 
 class PontoTuristicoViewSet(ModelViewSet):
@@ -27,4 +28,8 @@ class PontoTuristicoViewSet(ModelViewSet):
         pass
 
     def partial_update(self, request, *args, **kwargs):
+        pass
+
+    @action(methods=['post', 'get'], detail=True)
+    def denunciar(self, request, pk=None):
         pass
