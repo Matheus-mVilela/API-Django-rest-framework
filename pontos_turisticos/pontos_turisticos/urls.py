@@ -24,7 +24,9 @@ from enderecos.api.viewsets import EnderecoViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'pontoturistico', PontoTuristicoViewSet)
+router.register(
+    r'pontoturistico', PontoTuristicoViewSet, basename='PontoTuristico'
+)
 router.register(r'atracoes', AtracoesViewSet)
 router.register(r'avaliacoes', AvaliacoesViewSet)
 router.register(r'comentarios', ComentarioViewSet)

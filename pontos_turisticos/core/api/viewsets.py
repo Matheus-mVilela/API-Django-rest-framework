@@ -4,9 +4,8 @@ from .serializers import PontoTuristicoSerializer
 
 
 class PontoTuristicoViewSet(ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = PontoTuristico.objects.all()
+    # queryset = PontoTuristico.objects.all()
     serializer_class = PontoTuristicoSerializer
+
+    def queryset(self):
+        return PontoTuristico.objects.filter(aprovado=True)
