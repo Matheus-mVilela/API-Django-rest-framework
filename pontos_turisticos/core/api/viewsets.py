@@ -4,10 +4,14 @@ from core.models import PontoTuristico
 from .serializers import PontoTuristicoSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.authentication import TokenAuthentication
 
 
 class PontoTuristicoViewSet(ModelViewSet):
     # queryset = PontoTuristico.objects.all()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAdminUser,)
     serializer_class = PontoTuristicoSerializer
     filter_backends = [SearchFilter]
     search_fields = ['nome', 'descricao', 'enderecos__linha1']
