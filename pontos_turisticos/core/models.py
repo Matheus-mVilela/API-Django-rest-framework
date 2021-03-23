@@ -19,5 +19,9 @@ class PontoTuristico(models.Model):
         upload_to='pontos_turisticos', null=True, blank=True
     )
 
+    @property
+    def descricao_completa_2(self):
+        return self.nome, self.descricao
+
     def __str__(self):
         return self.nome
