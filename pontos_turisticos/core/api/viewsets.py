@@ -10,8 +10,8 @@ from rest_framework.authentication import TokenAuthentication
 
 class PontoTuristicoViewSet(ModelViewSet):
     # queryset = PontoTuristico.objects.all()
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAdminUser,)
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAdminUser,)
     serializer_class = PontoTuristicoSerializer
     filter_backends = [SearchFilter]
     search_fields = ['nome', 'descricao', 'enderecos__linha1']
